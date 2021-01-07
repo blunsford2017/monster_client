@@ -5,7 +5,10 @@ const MonsterCardHolder = (props) => {
     return (
         <div className="card-holder"> 
             <h2> Monster Card Holder</h2>
-            <MonsterCard />
+            {props.monsters.map(monster => 
+               <MonsterCard key={monster.id} monster={monster} /> 
+            )}
+            
         </div>
     );
 }
