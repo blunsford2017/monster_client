@@ -8,8 +8,8 @@ const MonsterCard = (props) => {
                     <h1 className="monster-title"> { props.monster.name } </h1>
                 </div>
                 <div className="card-body">
-                    <p> { props.monster.height } </p>
-                    <p> { props.monster.weight } </p>
+                    <p>Height: { props.monster.height } </p>
+                    <p>Weight:  { props.monster.weight } </p>
                     <p> { props.monster.description } </p>
                 </div>
                 <div className="card-footer">

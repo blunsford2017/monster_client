@@ -22,13 +22,28 @@ function App() {
     .catch(error => console.error(error));
   }
 
-  // console.log(monsterData.monsters)
+  function handleAdd(event, formInputs) {
+    event.preventDefault()
+    formInputs = JSON.stringify(formInputs);
+    fetch('/monsters', {
+      body: formInputs,
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(createdMonster => createdMonster.json())
+    .then(jsonedMonster => { setMonsterState(prevState => 
+      ({ monsters: [jsonedMonster, ...prevState.monsters] }))
+    })
+    .catch(error => console.log(error))
+  }
+
   return (
     <div className="App">
       <Header />
-      <NewMonster />
-      {/* {monsterData.monsters[0]} */}
-      {/* Pass down the monster data through here. */}
+      <NewMonster handleAdd={handleAdd} />
       <MonsterCardHolder monsters={monsterData.monsters} />
     </div>
   );

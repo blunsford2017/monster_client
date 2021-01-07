@@ -1,8 +1,11 @@
 import './NewMonster.css';
+import Form from '../Form/Form';
 
 const NewMonster = (props) => {
     return (
-        <div className="new-monster"> New Monster Creation Area</div>
+        <div className="new-monster">
+            <Form handleSubmit={props.handleAdd} />
+        </div>
     );
 }
 
