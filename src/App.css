@@ -25,3 +25,6 @@ small {
 body {
     background-color: #202124;
 }
+button {
+    margin: 2px;
+}

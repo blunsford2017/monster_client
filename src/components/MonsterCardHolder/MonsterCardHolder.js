@@ -10,6 +10,7 @@ const MonsterCardHolder = (props) => {
                 key={monster.id} 
                 monster={monster} 
                 handleUpdate={props.handleUpdate}
+                handleDelete={props.handleDelete}
                 /> 
             )}
             

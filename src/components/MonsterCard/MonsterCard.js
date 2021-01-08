@@ -37,7 +37,10 @@ const MonsterCard = (props) => {
                 <div className="card">
                     <div className="card-header">
                         <h1 className="monster-title"> { props.monster.name } </h1>
-                        <button className="btn" onClick={toggleForm}> Update </button>
+                        <button className="btn btn-success" onClick={toggleForm}> Update 
+                        </button>
+                        <button className="btn btn-warning" onClick={() => props.handleDelete(props.monster)}> Delete 
+                        </button>
                     </div>
                     <div className="card-body">
                         <p>Height: { props.monster.height } ft</p>

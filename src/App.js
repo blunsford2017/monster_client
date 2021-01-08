@@ -56,6 +56,20 @@ function App() {
    .catch(error => console.log(error));
   }
 
+  function handleDelete(deletedMonster) {
+    fetch(`/monsters/${deletedMonster.id}`, {
+       method: 'DELETE',
+       headers: {
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       }
+     })
+   .then(() => {
+    getMonsters();
+   })
+   .catch(error => console.log(error));
+  }
+
   return (
     <div className="App">
       <Header />
@@ -64,6 +78,7 @@ function App() {
         <MonsterCardHolder 
           monsters={monsterData.monsters}
           handleUpdate={handleUpdate}
+          handleDelete={handleDelete}
         />
       
     </div>
