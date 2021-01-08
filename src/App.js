@@ -22,14 +22,65 @@ function App() {
     .catch(error => console.error(error));
   }
 
-  // console.log(monsterData.monsters)
+  function handleAdd(event, formInputs) {
+    event.preventDefault()
+    formInputs = JSON.stringify(formInputs);
+    fetch('/monsters', {
+      body: formInputs,
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(createdMonster => createdMonster.json())
+    .then(jsonedMonster => { setMonsterState(prevState => 
+      ({ monsters: [jsonedMonster, ...prevState.monsters] }))
+    })
+    .catch(error => console.log(error))
+  }
+
+  function handleUpdate(event, formInputs) {
+    event.preventDefault();
+    fetch(`/monsters/${formInputs.id}`, {
+      body: JSON.stringify(formInputs),
+      method: 'PUT',
+      headers: {
+     'Accept': 'application/json, text/plain, */*',
+     'Content-Type': 'application/json'
+   }
+  })
+   .then(() => {
+     getMonsters();
+   })
+   .catch(error => console.log(error));
+  }
+
+  function handleDelete(deletedMonster) {
+    fetch(`/monsters/${deletedMonster.id}`, {
+       method: 'DELETE',
+       headers: {
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       }
+     })
+   .then(() => {
+    getMonsters();
+   })
+   .catch(error => console.log(error));
+  }
+
   return (
     <div className="App">
       <Header />
-      <NewMonster />
-      {/* {monsterData.monsters[0]} */}
-      {/* Pass down the monster data through here. */}
-      <MonsterCardHolder monsters={monsterData.monsters} />
+      <NewMonster handleAdd={handleAdd} />
+      
+        <MonsterCardHolder 
+          monsters={monsterData.monsters}
+          handleUpdate={handleUpdate}
+          handleDelete={handleDelete}
+        />
+      
     </div>
   );
 }

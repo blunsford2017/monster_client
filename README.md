@@ -45,7 +45,7 @@ Brandon oversaw the development of the React frontend that pulled and pushed dat
 
 ## Link to Frontend Repository
 
-[Monster Maker Backend Repo](https://github.com/blunsford2017/monster_api)
+[Monster Maker Frontend Repo](https://github.com/TechAlchemist/monster_client)
 
 ---
 
