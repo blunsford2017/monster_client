@@ -6,7 +6,11 @@ const MonsterCardHolder = (props) => {
         <div className="card-holder"> 
             <h2> Monster Card Holder</h2>
             {props.monsters.map(monster => 
-               <MonsterCard key={monster.id} monster={monster} /> 
+               <MonsterCard 
+                key={monster.id} 
+                monster={monster} 
+                handleUpdate={props.handleUpdate}
+                /> 
             )}
             
         </div>

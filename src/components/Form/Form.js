@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Input from './Input.js';
+import InputTextArea from './InputTextArea';
 
 function Form(props) {
     const [formState, setFormState] = useState({
@@ -36,8 +37,6 @@ function Form(props) {
     formState.height = '';
     formState.weight = '';
     formState.description = '';
-
-
   }
 
   function isFormValid() {
@@ -51,7 +50,7 @@ function Form(props) {
           name="name"
           placeholder="Monster Name"
           type="text"
-          value={formState.title}
+          value={formState.name}
           id="name"
          />
          <br />
@@ -73,7 +72,7 @@ function Form(props) {
           id="weight"
        />
        <br/>
-        <Input
+        <InputTextArea
           handleChange={handleChange}
           name="description"
           placeholder="Monster Description"
@@ -82,7 +81,9 @@ function Form(props) {
           id="description"
        />
        <br/>
-       <button className="btn" type="submit" disabled={isFormValid()}>Add Monster</button>
+       <button className="btn" type="submit" disabled={isFormValid()}>
+         {props.monster ? "Update Monster" : "Add Monster"}
+         </button>
       </form>
     );
   }
