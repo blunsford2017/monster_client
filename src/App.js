@@ -60,10 +60,12 @@ function App() {
     <div className="App">
       <Header />
       <NewMonster handleAdd={handleAdd} />
-      <MonsterCardHolder 
-        monsters={monsterData.monsters}
-        handleUpdate={handleUpdate}
-      />
+      
+        <MonsterCardHolder 
+          monsters={monsterData.monsters}
+          handleUpdate={handleUpdate}
+        />
+      
     </div>
   );
 }

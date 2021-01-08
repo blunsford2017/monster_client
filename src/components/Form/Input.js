@@ -15,6 +15,7 @@ function Input({
             value={value}
             onChange={handleChange}
             placeholder={placeholder}
+            className="form-control"
           />
         </>
       );

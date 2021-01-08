@@ -28,7 +28,7 @@ const MonsterCard = (props) => {
                         />
                     </div>
                     <div className="card-footer">
-                        <button onClick={toggleForm}>Cancel</button>
+                        <button className="btn" onClick={toggleForm}>Cancel</button>
                     </div>
                 </div>
             </div>
@@ -37,11 +37,11 @@ const MonsterCard = (props) => {
                 <div className="card">
                     <div className="card-header">
                         <h1 className="monster-title"> { props.monster.name } </h1>
-                        <button onClick={toggleForm}> Update </button>
+                        <button className="btn" onClick={toggleForm}> Update </button>
                     </div>
                     <div className="card-body">
-                        <p>Height: { props.monster.height } </p>
-                        <p>Weight:  { props.monster.weight } </p>
+                        <p>Height: { props.monster.height } ft</p>
+                        <p>Weight:  { props.monster.weight } pounds</p>
                         <p> { props.monster.description } </p>
                     </div>
                     <div className="card-footer">

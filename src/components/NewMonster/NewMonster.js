@@ -3,7 +3,7 @@ import Form from '../Form/Form';
 
 const NewMonster = (props) => {
     return (
-        <div className="new-monster">
+        <div className="form-group">
             <Form handleSubmit={props.handleAdd} />
         </div>
     );

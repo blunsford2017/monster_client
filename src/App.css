@@ -1,7 +1,27 @@
-body {
-  margin: 0px;
+/* Font for Titles */
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+/* Font for everthing else */
+@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap'); 
+
+h1 {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 4em; 
 }
 
-div {
-  padding: 10px;
+p, small, button {
+    font-family: 'Yeon Sung', cursive; 
+}
+
+small {
+    color: white;
+    font-size: 16px;
+    margin: 2px;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Yeon Sung', cursive; 
+ }
+ 
+body {
+    background-color: #202124;
 }

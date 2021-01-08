@@ -15,6 +15,7 @@ function Input({
             rows="4"
             cols="50"
             placeholder={placeholder}
+            className="form-control"
           />
         </>
       );
