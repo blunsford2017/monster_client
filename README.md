@@ -51,5 +51,5 @@ Brandon oversaw the development of the React frontend that pulled and pushed dat
 
 ## Link to Live Deployment 
 
-[Monster Maker](#)
+[Monster Maker](https://monster-client-frontend.herokuapp.com/)
 
